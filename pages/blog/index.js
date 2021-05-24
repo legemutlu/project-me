@@ -1,24 +1,13 @@
 import Link from 'next/link'
 import { getAllNodes } from 'next-mdx/server'
+import Posts from '../../components/posts'
 
 function BlogPage({ posts }) {
   return (
     <div className="site-container">
       <div className="space-y-4">
         {posts.map((post) => {
-          return (
-            <article key={post.url}>
-              <h2 className="text-xl font-bold">
-                <Link href={post.url}>
-                  <a>{post.frontMatter.title}</a>
-                </Link>
-              </h2>
-              <p>{post.frontMatter.excerpt}</p>
-              <div className="text-gray-400">
-                <span>{post.frontMatter.date}</span>
-              </div>
-            </article>
-          )
+          return <Posts key={post.slug} post={post}/>
         })}
       </div>
     </div>

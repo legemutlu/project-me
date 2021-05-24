@@ -1,11 +1,20 @@
 {
+  "page": {
+    "contentPath": "content/pages",
+    "basePath": "/"
+  },
   "post": {
-    "contentPath": "contents/posts",
+    "contentPath": "content/posts",
     "basePath": "/blog",
     "sortBy": "date",
     "sortOrder": "desc"
   },
   "category": {
-    "contentPath": "content/categories"
+    "contentPath": "content/categories",
+    "basePath": "/blog/categories"
+  },
+  "author": {
+    "contentPath": "content/authors",
+    "basePath": "/authors"
   }
 }
