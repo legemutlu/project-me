@@ -4,18 +4,17 @@ import Posts from '../../components/posts'
 export default function AuthorPage({author, posts}){
   return (
     <div className="site-container">
-      <article className="prose">
-        <h1>Posts by {author.frontMatter.name}</h1>
+        <span className="page-title">Posts by {author.frontMatter.name}</span>
         {author.frontMatter.bio && (
-          <p>{author.frontMatter.bio}</p>
+          <p className="my-6">{author.frontMatter.bio}</p>
         )}
-        <hr />
+      <div className="space-y-16">
         {posts?.length ? (
           posts.map((post) => <Posts key={post.slug} post={post} />)
         ) : (
           <p className="text-gray-700 text-bold">No posts found.</p>
         )}
-      </article>
+      </div>
     </div>
   )
 }

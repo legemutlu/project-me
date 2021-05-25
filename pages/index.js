@@ -10,7 +10,6 @@ export default function HomePage() {
           </p>
         </div>
       </div>
-
       <div className="max-w-4xl mx-auto mt-20">
         <img src="image1.jpeg" alt="" />
       </div>

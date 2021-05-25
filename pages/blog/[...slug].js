@@ -11,7 +11,7 @@ export default function PostPage({ post }) {
   return (
     <div className="site-container">
       <article className="prose">
-        <h1>{post.frontMatter.title}</h1>
+        <span className="page-title">{post.frontMatter.title}</span>
         <p>{post.frontMatter.excerpt}</p>
         {post.relationships.author.map((author) => (
           <strong key={author.slug}>

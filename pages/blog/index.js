@@ -5,7 +5,8 @@ import Posts from '../../components/posts'
 function BlogPage({ posts }) {
   return (
     <div className="site-container">
-      <div className="space-y-4">
+      <h1 className="page-title">All Posts.</h1>
+      <div className="space-y-16">
         {posts.map((post) => {
           return <Posts key={post.slug} post={post}/>
         })}

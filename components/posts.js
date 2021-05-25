@@ -1,17 +1,32 @@
 import Link from 'next/link'
+import { formatDate } from '../utils/format-date'
 
 export default function Posts({post, ...props}){
   return (
     <article key={post.url}>
-      <h2 className="text-xl font-bold">
+      <hr className="mb-8"/>
+      {post.relationships.author.length ? (
+        <span className="inline-block mr-2">
+          Posted by{" "}
+          {post.relationships.author.map((author, index) => (
+            <strong key={author.slug}>
+              {index !== 0 && " and "}{" "}
+              <Link href={author.url}>
+                <a className="text-blue-500">{author.frontMatter.name}</a>
+              </Link>
+            </strong>
+          ))}
+        </span>
+      ) : null}
+      <div className="inline-block text-gray-400 mb-3">
+        <span>{formatDate(post.frontMatter.date)}</span>
+      </div>
+      <h2 className="text-3xl font-bold text-black mb-3">
         <Link href={post.url}>
           <a>{post.frontMatter.title}</a>
         </Link>
       </h2>
       <p>{post.frontMatter.excerpt}</p>
-      <div className="text-gray-400">
-        <span>{post.frontMatter.date}</span>
-      </div>
     </article>
   )
 }

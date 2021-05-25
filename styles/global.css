@@ -6,4 +6,8 @@
     .site-container{
         @apply max-w-2xl mx-auto
     }
+
+    .page-title{
+        @apply font-black text-6xl text-black mb-10
+    }
 }
