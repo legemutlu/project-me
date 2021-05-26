@@ -1,7 +1,8 @@
 import { getMdxNode, getMdxPaths } from 'next-mdx/server'
 import { useHydrate } from 'next-mdx/client'
-import { mdxComponents } from '../../components/mdx-components'
+import { mdxComponents } from '../../src/components/mdx-components'
 import Link from 'next/link'
+import { Layout } from '../../src/components/layout'
 
 export default function PostPage({ post }) {
 
@@ -9,6 +10,7 @@ export default function PostPage({ post }) {
     components: mdxComponents
   })
   return (
+    <Layout>
     <div className="site-container">
       <article className="prose">
         <span className="page-title">{post.frontMatter.title}</span>
@@ -23,6 +25,7 @@ export default function PostPage({ post }) {
         <div>{content}</div>
       </article>
     </div>
+    </Layout>
   )
 }
 

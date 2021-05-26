@@ -1,21 +1,24 @@
 import { getNode, getAllNodes, getMdxPaths  } from 'next-mdx'
-import Posts from '../../components/posts'
+import Posts from '../../src/components/posts'
+import { Layout } from '../../src/components/layout'
 
 export default function AuthorPage({author, posts}){
   return (
-    <div className="site-container">
-        <span className="page-title">Posts by {author.frontMatter.name}</span>
-        {author.frontMatter.bio && (
-          <p className="my-6">{author.frontMatter.bio}</p>
-        )}
-      <div className="space-y-16">
-        {posts?.length ? (
-          posts.map((post) => <Posts key={post.slug} post={post} />)
-        ) : (
-          <p className="text-gray-700 text-bold">No posts found.</p>
-        )}
+    <Layout>
+      <div className="site-container">
+          <span className="page-title">Posts by {author.frontMatter.name}</span>
+          {author.frontMatter.bio && (
+            <p className="my-10">{author.frontMatter.bio}</p>
+          )}
+        <div className="space-y-16">
+          {posts?.length ? (
+            posts.map((post) => <Posts key={post.slug} post={post} />)
+          ) : (
+            <p className="text-gray-700 text-bold">No posts found.</p>
+          )}
+        </div>
       </div>
-    </div>
+    </Layout>
   )
 }
 

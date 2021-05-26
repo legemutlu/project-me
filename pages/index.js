@@ -1,6 +1,10 @@
+import { Layout } from '../src/components/layout'
+import Navbar from '../src/components/navbar'
+
 export default function HomePage() {
   return (
-    <>
+<>
+    <Navbar />
       <div className="site-container">
         <div className="space-y-4">
           <h1 className="text-3xl font-bold">Merhaba</h1>

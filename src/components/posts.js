@@ -18,6 +18,17 @@ export default function Posts({post, ...props}){
           ))}
         </span>
       ) : null}
+      <span className="inline-block mr-2" >
+        {" "}in{" "}
+        {post.relationships.category.map((category, index) => (
+          <strong key={category.slug}>
+            {index !== 0 && " and "}{" "}
+            <Link href={category.url}>
+              <a className="text-purple-500">{category.frontMatter.name}</a>
+            </Link>
+          </strong>
+        ))}
+      </span>
       <div className="inline-block text-gray-400 mb-3">
         <span>{formatDate(post.frontMatter.date)}</span>
       </div>

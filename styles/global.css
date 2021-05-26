@@ -7,6 +7,26 @@
         @apply max-w-2xl mx-auto
     }
 
+    .header{
+        @apply sticky top-0 py-10 opacity-90 bg-white
+    }
+
+    .header-container{
+        @apply max-w-3xl mx-auto
+    }
+
+    .header-right{
+        @apply font-black text-2xl pl-4 pr-4 text-black
+    }
+
+    .header-left{
+        @apply font-medium text-gray-900 text-lg float-right
+    }
+
+    .header-left-item{
+        @apply inline-grid grid-cols-3 gap-9
+    }
+
     .page-title{
         @apply font-black text-6xl text-black mb-10
     }
