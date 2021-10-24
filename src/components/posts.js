@@ -32,7 +32,7 @@ export default function Posts({post, ...props}){
       <div className="inline-block text-gray-400 mb-3">
         <span>{formatDate(post.frontMatter.date)}</span>
       </div>
-      <h2 className="text-3xl font-bold text-black mb-3">
+      <h2 className="text-3xl font-bold mb-3">
         <Link href={post.url}>
           <a>{post.frontMatter.title}</a>
         </Link>

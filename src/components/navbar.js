@@ -7,12 +7,12 @@ function Navbar() {
     <header className="header">
       <nav className="header-container">
         <Link href="/" passHref>
-          <a className="header-right">{config.site.name}</a>
+          <a className="header-title">{config.site.name}</a>
         </Link>
-        <div className="header-left">
-          <div className="header-left-item">
+        <div className="header-items">
+          <div className="header-item">
             {config.links.map((link) => (
-              <NavbarLink className="hover:text-blue-500" key={link.url} href={link.url}>
+              <NavbarLink className="hover:text-blue-300" key={link.url} href={link.url}>
                 {link.title}
               </NavbarLink>
             ))}

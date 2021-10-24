@@ -6,7 +6,7 @@ import { Layout } from '../../src/components/layout'
 function BlogPage({ posts }) {
   return (
     <Layout>
-      <div className="site-container">
+      <div className="c-small">
         <h1 className="page-title">All Posts.</h1>
         <div className="space-y-16">
           {posts.map((post) => {

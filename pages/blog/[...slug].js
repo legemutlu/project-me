@@ -3,6 +3,7 @@ import { useHydrate } from 'next-mdx/client'
 import { mdxComponents } from '../../src/components/mdx-components'
 import Link from 'next/link'
 import { Layout } from '../../src/components/layout'
+import { formatDate } from '../../src/utils/format-date'
 
 export default function PostPage({ post }) {
 
@@ -11,7 +12,7 @@ export default function PostPage({ post }) {
   })
   return (
     <Layout>
-    <div className="site-container">
+    <div className="c-small">
       <article className="prose">
         <span className="page-title">{post.frontMatter.title}</span>
         <p>{post.frontMatter.excerpt}</p>
@@ -20,6 +21,7 @@ export default function PostPage({ post }) {
             <Link href={author.url}>{author.frontMatter.name}</Link>
           </strong>
         ))}
+        <span className="block text-gray-400 mt-1">{formatDate(post.frontMatter.date)}</span>
         <hr/>
         <img src={post.frontMatter.image} alt=""/>
         <div>{content}</div>

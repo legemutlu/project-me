@@ -5,7 +5,7 @@ import { Layout } from '../../src/components/layout'
 export default function AuthorPage({author, posts}){
   return (
     <Layout>
-      <div className="site-container">
+      <div className="c-small">
           <span className="page-title">Posts by {author.frontMatter.name}</span>
           {author.frontMatter.bio && (
             <p className="my-10">{author.frontMatter.bio}</p>

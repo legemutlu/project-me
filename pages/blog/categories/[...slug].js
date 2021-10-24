@@ -6,7 +6,7 @@ import { Layout } from '../../../src/components/layout'
 export default function CategoryPage({ category, posts }) {
   return (
     <Layout>
-      <div className="site-container">
+      <div className="c-small">
         <span className="page-title">{category.frontMatter.name}</span>
         <div className="space-y-16 mt-10">
           {posts?.length ? (
