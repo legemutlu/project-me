@@ -2,7 +2,7 @@
 Use the package manager [yarn](https://yarnpkg.com/)
 
 ```bash
-yarn install
+yarn
 ```
 
 ## Usage
