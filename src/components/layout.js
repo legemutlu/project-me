@@ -1,11 +1,12 @@
 import Navbar from './navbar'
+import config from '../config'
 
 export function Layout({ children }) {
   return (
     <>
       <Navbar />
       <main>{children}</main>
-      {/*<footer>
+      <footer className="footer">
         <div>
           <div>
             {config.site.copyright ? (
@@ -15,7 +16,7 @@ export function Layout({ children }) {
             ) : null}
           </div>
         </div>
-      </footer>*/}
+      </footer>
     </>
   )
 }

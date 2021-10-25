@@ -51,4 +51,8 @@
     .page-title{
         @apply font-thin text-6xl text-white mb-10
     }
+
+    .footer{
+        @apply text-center text-sm text-gray-500 mt-36 mb-10
+    }
 }

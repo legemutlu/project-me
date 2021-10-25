@@ -5,10 +5,6 @@ export default {
   },
   links: [
     {
-      title: "I'am",
-      url: "/",
-    },
-    {
       title: "Posts",
       url: "/blog",
     },

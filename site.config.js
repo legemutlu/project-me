@@ -7,8 +7,8 @@ module.exports = {
     name: 'Levent Ege Mutlu',
   },
   social: {
-    instagram: 'https://instagram.com/ademilter',
-    twitter: 'https://twitter.com/ademilter',
+    instagram: 'https://instagram.com',
+    twitter: 'https://twitter.com',
     github: 'https://github.com/legemutlu',
   },
 };
