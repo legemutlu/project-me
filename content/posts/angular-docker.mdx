@@ -1,0 +1,155 @@
+---
+title: Create Angular App and Deploy To Docker
+excerpt: Create angular app and how to deploy this angular app to docker.
+image: angular-docker/angular-docker.png
+category:
+  - category-software
+author:
+  - levent-ege-mutlu
+featured: true
+date: "2021-11-08"
+---
+
+# Hi Fellas! 👋🏽
+
+In this post, you'll learn how to create an angular docker container.
+
+This post divided into as following parts:
+
+  - Create Angular App
+  - Create Dist Folder
+  - Create Dockerfile
+  - Build Docker and run
+
+----
+# So, First We Need Angular Application
+
+I'm going to create an Angular Application, and first we have to install [Node](https://nodejs.org/en/) which is Javascript Runtime Environment.
+
+We need [NPM](https://docs.npmjs.com/getting-started) (Node Package Manager). npm is a package manager for the JavaScript programming language. We’ll use npm to install packages or libraries.
+
+Then, we’ll generate a new Angular project using the [Angular CLI](https://angular.io/cli). Install it globally (with the -g flag) in your command line :
+
+```js
+npm install -g @angular/cli
+```
+
+Now, we can create an Angular Application in the command line, my project name is angular-docker, and you are free for pick a name whatever you want
+
+Using ```ng new``` command create application :
+
+```js
+ng new angular-docker
+```
+
+After creating Angular Application, we go through project folder and run application :
+
+```js
+ng serve
+```
+
+When you see the message in your command line '✅ Compiled successfully' then check the url which is ```http://localhost:4200/```.
+
+You will see this default welcome page :
+
+![alt](angular-docker/welcome-page.png)
+
+We got a working angular application right now.
+
+First part of post is done fellas!! 💪🏽
+
+----
+
+# Let's Create a Dist Folder
+
+The first thing to do is to build the application and dist folder will be created.
+In Angular, this is just as simple as running the following command :
+
+```js
+ng build --prod
+```
+
+When the dist folder created, you can see inside the dist folder static files.
+These files are everything you need to show your application to the outside world.
+
+If you haven't struggled about first and that part, we can continue with third part of post.
+
+----
+
+# Create Dockerfile
+
+First start create a Dockerfile in route directory of project.
+
+
+We create a layer from the node:latest Docker image with ```FROM```.
+> I use node latest version, you can use node specific version as node:16.13.0
+
+```dockerfile
+FROM node:latest as node
+```
+
+Bundled everything inside an application folder which is called app.
+
+```dockerfile
+WORKDIR /app
+```
+
+Copy package.json and package-lock.json files of our local application folder toward this app folder inside the Docker container.
+And run npm install.
+
+```dockerfile
+COPY package.json package-lock.json ./
+RUN npm install
+```
+
+Copy every file.
+
+```dockerfile
+COPY . .
+```
+
+And build our project.
+
+
+```dockerfile
+RUN npm run build --prod
+```
+
+Alpine is the base image which is based on Alpine Linux. So, node:alpine is an Alpine Linux image with node the latest version installed.
+
+```dockerfile
+FROM nginx:alpine
+COPY --from=node /app/dist/eshopz usr/share/nginx/html
+```
+
+All Dockerfile instructions becomes like this :
+
+```dockerfile
+FROM node:16.13.0 as node
+WORKDIR /app
+COPY package.json package-lock.json ./
+RUN npm install
+COPY . .
+RUN npm run build --prod
+
+FROM nginx:alpine
+COPY --from=node /app/dist/eshopz usr/share/nginx/html
+```
+
+----
+
+# And Finally Build Docker and Run
+
+So, let’s build and run the application with the Docker command angular-docker:
+
+```js
+docker build -t angular-docker .
+docker run -d -p 4200:80 angular-docker
+```
+
+💥 Let's check ```http://localhost:4200/``` and will see running application. That's sort of magic and docker.
+
+-----
+
+# So, that's all folks. We got application that is working in docker container. Good luck with that!🤟🏾
+
