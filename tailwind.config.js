@@ -4,7 +4,6 @@ const { spacing, fontFamily } = require('tailwindcss/defaultTheme');
 module.exports = {
   mode: 'jit',
   purge: ['./pages/**/*.{js,ts,jsx,tsx}', './src/components/**/*.{js,ts,jsx,tsx}'],
-  darkMode: 'class',
   theme: {
     extend: {
       colors: {
@@ -32,7 +31,6 @@ module.exports = {
     },
   },
   variants: {
-    typography: ['dark'],
     extend: {
       opacity: ['disabled'],
     },
