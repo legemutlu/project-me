@@ -27,6 +27,9 @@ module.exports = {
             '*': {
               color: 'inherit !important',
             },
+            code:{
+              color: 'white !important',
+            }
           },
         },
         dark: {

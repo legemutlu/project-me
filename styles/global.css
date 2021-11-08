@@ -59,13 +59,4 @@
         @apply text-center text-sm text-gray-700 mt-36 mb-10
         dark:text-gray-500;
     }
-
-    .prose {
-        @apply text-gray-700
-        dark:text-white
-    }
-
-    .prose code{
-        @apply text-white;
-    }
 }
