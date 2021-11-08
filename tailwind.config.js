@@ -25,11 +25,8 @@ module.exports = {
               'border-color': colors.gray['200'],
             },
             '*': {
-              color: 'inherit',
+              color: 'inherit !important',
             },
-            h1: {
-              color: 'white'
-            }
           },
         },
         dark: {
