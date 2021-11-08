@@ -4,7 +4,7 @@ const { spacing, fontFamily } = require('tailwindcss/defaultTheme');
 module.exports = {
   mode: 'jit',
   purge: ['./pages/**/*.{js,ts,jsx,tsx}', './src/components/**/*.{js,ts,jsx,tsx}'],
-  darkMode: 'class', // or 'media' or 'class'
+  darkMode: 'class',
   theme: {
     extend: {
       colors: {
@@ -21,18 +21,10 @@ module.exports = {
               'scroll-margin-top': spacing[32],
             },
             hr: {
-              'border-color': colors.gray['200'],
+              'border-color': colors.gray['700'],
             },
             '*': {
               color: 'inherit !important',
-            },
-          },
-        },
-        dark: {
-          css: {
-            // color: 'inherit'
-            hr: {
-              'border-color': colors.gray['700'],
             },
           },
         },
