@@ -1,5 +1,6 @@
 const colors = require('tailwindcss/colors');
 const { spacing, fontFamily } = require('tailwindcss/defaultTheme');
+const { textColor } = require('tailwindcss/lib/plugins')
 
 module.exports = {
   mode: 'jit',
@@ -24,8 +25,11 @@ module.exports = {
               'border-color': colors.gray['200'],
             },
             '*': {
-              color: 'inherit !important',
+              color: 'inherit',
             },
+            h1: {
+              color: 'white'
+            }
           },
         },
         dark: {
