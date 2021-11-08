@@ -29,7 +29,7 @@ export default function Posts({post, ...props}){
           </strong>
         ))}
       </span>
-      <div className="inline-block text-black-900 mb-3 dark:text-gray-400">
+      <div className="inline-block text-gray-700 mb-3 dark:text-gray-400">
         <span>{formatDate(post.frontMatter.date)}</span>
       </div>
       <h2 className="text-3xl font-bold mb-3">
