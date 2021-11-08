@@ -60,8 +60,12 @@
         dark:text-gray-500;
     }
 
-    .prose{
+    .prose {
         @apply text-gray-700
-        dark:text-white;
+        dark:text-white
+    }
+
+    .prose code{
+        @apply text-white;
     }
 }
