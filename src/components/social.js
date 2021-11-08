@@ -10,8 +10,9 @@ function SocialButton({ href, children }) {
       href={href}
       blank
       className="
-      flex items-center p-3 bg-gray-700 text-gray-300 rounded-full transition-colors
-      hover:bg-opacity-75"
+      flex items-center p-3 bg-gray-200 text-gray-600 rounded-full transition-colors
+      hover:bg-opacity-75
+      dark:bg-gray-700 dark:text-gray-300"
     >
       {children}
     </A>

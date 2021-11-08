@@ -21,7 +21,7 @@ export default function PostPage({ post }) {
             <Link href={author.url}>{author.frontMatter.name}</Link>
           </strong>
         ))}
-        <span className="block text-gray-400 mt-1">{formatDate(post.frontMatter.date)}</span>
+        <span className="block text-black-900 mt-1 dark:text-gray-400">{formatDate(post.frontMatter.date)}</span>
         <hr/>
         <img src={post.frontMatter.image} alt=""/>
         <div>{content}</div>

@@ -23,7 +23,8 @@
             @apply max-w-screen-xl mx-auto px-4;
         }
         .text-highlight {
-            @apply text-gray-50;
+            @apply text-gray-900
+            dark:text-gray-50;
         }
     }
 
@@ -37,10 +38,12 @@
 
     .header-title{
         @apply font-extralight text-2xl pl-4 pr-4 text-white
+        dark:text-black-900;
     }
 
     .header-items{
         @apply font-extralight text-gray-300 text-lg float-right
+        dark:text-black-900;
     }
 
     .header-item{
@@ -49,9 +52,11 @@
 
     .page-title{
         @apply font-thin text-6xl text-white mb-10
+        dark:text-black;
     }
 
     .footer{
         @apply text-center text-sm text-gray-500 mt-36 mb-10
+        dark:text-black-900;
     }
 }
