@@ -37,13 +37,13 @@
     }
 
     .header-title{
-        @apply font-extralight text-2xl pl-4 pr-4 text-white
-        dark:text-black-900;
+        @apply font-extralight text-2xl pl-4 pr-4 text-black-900
+        dark:text-white;
     }
 
     .header-items{
-        @apply font-extralight text-gray-300 text-lg float-right
-        dark:text-black-900;
+        @apply font-extralight text-black-900 text-lg float-right
+        dark:text-gray-300;
     }
 
     .header-item{
@@ -51,12 +51,12 @@
     }
 
     .page-title{
-        @apply font-thin text-6xl text-white mb-10
-        dark:text-black;
+        @apply font-thin text-6xl text-black mb-10
+        dark:text-white;
     }
 
     .footer{
-        @apply text-center text-sm text-gray-500 mt-36 mb-10
-        dark:text-black-900;
+        @apply text-center text-sm text-black-900 mt-36 mb-10
+        dark:text-gray-500;
     }
 }
