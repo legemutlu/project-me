@@ -1,5 +1,5 @@
 ---
-title: How To Create Angular App and Deploy To Docker
+title: How To Containerize Angular Applications with Docker
 excerpt: Create angular app and how to deploy this angular app to docker.
 image: angular-docker/angular-docker.png
 category:
@@ -12,7 +12,12 @@ date: "2021-11-08"
 
 # Hi Fellas! 👋🏽
 
-In this post, you'll learn how to create an angular docker container.
+What do you do when you need to build Angular in another environment? You free to say 'It's working on my computer' or use container of docker.
+Docker is an open source platform for building, deploying, and managing containerized applications.
+Docker containers can simplify the process of building and deploying Angular applications.
+In this post, we'll check how to containerize angular applications with docker.
+
+
 
 This post is divided into the following parts:
 
@@ -119,13 +124,13 @@ Alpine is the base image which is based on Alpine Linux. So, node:alpine is an A
 
 ```dockerfile
 FROM nginx:alpine
-COPY --from=node /app/dist/eshopz usr/share/nginx/html
+COPY --from=node /app/dist/angular-docker usr/share/nginx/html
 ```
 
 All Dockerfile instructions used above are gathered here:
 
 ```dockerfile
-FROM node:16.13.0 as node
+FROM node:latest as node
 WORKDIR /app
 COPY package.json package-lock.json ./
 RUN npm install
@@ -133,7 +138,7 @@ COPY . .
 RUN npm run build --prod
 
 FROM nginx:alpine
-COPY --from=node /app/dist/eshopz usr/share/nginx/html
+COPY --from=node /app/dist/angular-docker usr/share/nginx/html
 ```
 
 ----
